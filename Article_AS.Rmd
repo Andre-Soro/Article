@@ -1,0 +1,54 @@
+---
+title: "On the eletrodynamic of moving bodies"
+author: "André Dogninema Sora, Jean-Romain Roussel, Alexis Achim"
+output: pdf_document
+bibliography: biblio.bibtex
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract
+
+Conifer breeding programs are more and more considering wood quality as selection criteria to improve end-use properties. Wood density is among the key traits as it is related to mechanical strength and dimensional stability. Variation of density within a piece of wood may lead to deformation during transformation and inhomogeneous machining properties. In the present study, we aim at disentangling age, genetic and environmental influences on the pith-to-bark variation of wood density. 
+We analyzed the wood density profiles of a 16-year-old genetic experimentation plantation from white spruce seedlings grown in nurseries and planted at two years of age. repeated in two contrasting environments (Asselin and Saint-Casimir) in the province of Quebec. A total of 2365 trees belonging to 93 full-sib families were sampled for this study. We developed a model to describe the interannual variation of the wood density from  pith-to-bark. Then, we developed a variability index from the model residues to determine the variation in the density of pith-to-bark in order to identify tree families that are least sensitive to variations in climatic conditions.. The genetic control of density, ring width,  model parameters and uniformity index was evaluated . This makes it possible to see the trait the level of heritability of each of these characters and thus to know if it is useful to select trees from orbservations made on these trees. ASReml3 package in R was used to estimate trait genetic parameters based on the residual maximum likelihood. Strong heritability has been observed in density, ring width and model parameters have heritability ranging from low to moderate, and the index of variability has almost no heritability. Future work can be done on older trees and also on one-time events to see if this changes the heritability of the variability index.\
+
+
+# Introduction
+Thousands of hectares of Canadian forest are harvested each year in addition to losses due to insects, diseases and fires. It is therefore essential to offset these losses if we maintain Canada's forests. Genetic improvement, which is a tool for reforestation, is becoming a crucial and increasingly necessary discipline for the development of the Canadian forest. Since trees are organisms that live for several decades, it is essential to take into account the current climate change context by using trees capable of adapting to current and future climatic conditions. It is in this context that the genetic improvement intervenes so that the reforestation is made from tree to adapt to the climate and having interesting characters for wood production. Improvement programs are in place for the most important commercial species, including white spruce (Picea glauca (Moench) Voss) which has a significant economic value because of its geographical distribution and abundance. Spruce wood is valuable as lumber, material for carpentry products and for pulping because of the characteristics of its fibres [@Zhang2008]. In addition, the plasticity of spruce, enable this species to adapt to various types of soil and climatic conditions [@Nienstaedt1990]. All these characteristics make white spruce a species of great interest in North America and consequently it is heavily reforested in various silvicultural systems in Canada with more than 150 million of natural an hybrid seedlings planted yearly accross almost all forested regions which represents a wide range of soils types and a climatic conditions (Canadian Council of Forest Ministers 2009). \ 
+
+During the first half of the 20th century, most studies were dedicated on increasing wood volume production [@Koubaa2000; REF] but with the increasing demand of high structural quality products the aspects of wood quality became as important as wood volume [@Franceschini2012]. Consequently studies have been set up to understand the genetic sources of phenotypic variations of wood properties [@Corriveau1971; @Li1993; @Li1997]. On the other hand, it must be remembered that variations in certain wood properties such as ring width and density are governed by the environment in addition to genetics [@Dufour2010, @Rossi2012]. It is therefore essential to take climate conditions into account in breeding programs for wood quality. \ 
+
+Wood quality has two components: resistance to mortality by vigor, for example, and quality for human use, which is often focused on density. Indeed a uniform density at the stem of the tree gives it a greater mechanical resistance to the wind and therefore a lower probability of mortality during a climatic event such as a storm. With regard to the quality of wood related to its use, Several traits were considered for wood quality assessment and density is one of the most widely used indicators and arguably the most important one because it affects the performance of saw timber, the pulp yield and calorific values for biomass applications for bioenergy [@Macdonald2002; @Mckendry2002]. For exemple, a strong interannual variation of the density of the wood leads to a decrease of the mechanical resistance while a relatively uniform density produce wood with better mechanical performance. It is therefore important from both a biological point of view and use of the wood resource to have a wood with a uniform density. \ 
+
+Unlike growth that is more controlled by environment than genetic and therefore has low to moderate heritability [@Ivkovich2002a], wood density in white spruce is under strong genetic control with moderate to high heritability [@Corriveau1991; @Yanchuk1993; @Ivkovich2002a; @Ivkovich2002b, @Beaulieu2006] and this makes this trait attractive for genetic improvement. It should be noted that although density is predominantly under genetic control, it is partly controlled by the environment as growth is density dependent [@Pape1999] and growth is predominantly environmentally controlled.\ 
+
+There are two types of radial variation in wood density: low frequency radial variations under internal control and high frequency interannual variations under control of annual events (environment) [@Nicault2010]. In white spruce, there is a typical radial pattern of variation in bark-to-bark wood density in spruce [@Moore2011], which is a low-frequency radial variation. First a decrease in density during the first years of growth and then an increase of from the beginning of the formation of mature wood. This typical pattern is denoted as pattern of type II according to according to [@panshin1980]. In addition to this radial variation, the density can vary from one species to another or from one tree to another, but it also varies within the same tree (interannual variation) [@Nicault2010]. Contrary to the radial variation, the interannual variation of the density is influenced mainly by events external to the tree such as the edaphic and climatic conditions [@Nicault2010].\ 
+
+In addition, there is little known genetic control of wood density uniformity in white spruce. The assessment of this trait can facilitate the selection of trees for genetic improvement or reforestation. The radial trend in black spruce density has been modelled using models [@Xiang2014]. This model can be adapted to white spruce that has the same radial tendency as black spruce. \
+In  this study, we tested  using a model similar to that of @Xiang2014 to subtract the effect of cambial age from wood density in order to assess the interannual variation related to environmental conditions. The specific objectives were: (1) present the development of a model which describes the general white spruce density annual ring number from the pith, (2) characterizing the genetic influence on wood density variation in white spruce. In this way, we will be able to identify tree families that are least sensitive to interannual variations in climate.
+
+
+
+
+
+
+
+
+
+
+# Material and method
+
+# Conclusion
+This study assessed the variability of wood density in white spruce. Using the optimal function of the stats package to find the best parameters iteratively for each tree allowed to have an adjustment for the density profile of each of the trees in the study. Thus, the index of variability of the density was determined from the profile of each tree. The low heritability of this index puts a damper on its use for identifying potential tree family of interest for breeding programs from a low interannual variability perspective of wood density. As for the heritability of ring density and width, it is similar to what can be found in previous studies. The application of the method used in this study to older trees can be interesting in order to make a comparison and see if the heritability is the same and if this index can be used in this case to select families of trees for genetic improvement.
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
