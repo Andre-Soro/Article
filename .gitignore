@@ -26,3 +26,5 @@
 *.doc
 *.docx
 *.synctex.gz
+.Rproj.user
+.Rhistory
