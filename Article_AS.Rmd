@@ -18,6 +18,7 @@ We analyzed the wood density profiles of a 16-year-old genetic experimentation p
 
 
 # Introduction
+
 Thousands of hectares of Canadian forest are harvested each year in addition to losses due to insects, diseases and fires. It is therefore essential to offset these losses if we maintain Canada's forests. Genetic improvement, which is a tool for reforestation, is becoming a crucial and increasingly necessary discipline for the development of the Canadian forest. Since trees are organisms that live for several decades, it is essential to take into account the current climate change context by using trees capable of adapting to current and future climatic conditions. It is in this context that the genetic improvement intervenes so that the reforestation is made from tree to adapt to the climate and having interesting characters for wood production. Improvement programs are in place for the most important commercial species, including white spruce (Picea glauca (Moench) Voss) which has a significant economic value because of its geographical distribution and abundance. Spruce wood is valuable as lumber, material for carpentry products and for pulping because of the characteristics of its fibres [@Zhang2008]. In addition, the plasticity of spruce, enable this species to adapt to various types of soil and climatic conditions [@Nienstaedt1990]. All these characteristics make white spruce a species of great interest in North America and consequently it is heavily reforested in various silvicultural systems in Canada with more than 150 million of natural an hybrid seedlings planted yearly accross almost all forested regions which represents a wide range of soils types and a climatic conditions (Canadian Council of Forest Ministers 2009). \ 
 
 During the first half of the 20th century, most studies were dedicated on increasing wood volume production [@Koubaa2000; REF] but with the increasing demand of high structural quality products the aspects of wood quality became as important as wood volume [@Franceschini2012]. Consequently studies have been set up to understand the genetic sources of phenotypic variations of wood properties [@Corriveau1971; @Li1993; @Li1997]. On the other hand, it must be remembered that variations in certain wood properties such as ring width and density are governed by the environment in addition to genetics [@Dufour2010, @Rossi2012]. It is therefore essential to take climate conditions into account in breeding programs for wood quality. \ 
@@ -30,15 +31,6 @@ There are two types of radial variation in wood density: low frequency radial va
 
 In addition, there is little known genetic control of wood density uniformity in white spruce. The assessment of this trait can facilitate the selection of trees for genetic improvement or reforestation. The radial trend in black spruce density has been modelled using models [@Xiang2014]. This model can be adapted to white spruce that has the same radial tendency as black spruce. \
 In  this study, we tested  using a model similar to that of @Xiang2014 to subtract the effect of cambial age from wood density in order to assess the interannual variation related to environmental conditions. The specific objectives were: (1) present the development of a model which describes the general white spruce density annual ring number from the pith, (2) characterizing the genetic influence on wood density variation in white spruce. In this way, we will be able to identify tree families that are least sensitive to interannual variations in climate.
-
-
-
-
-
-
-
-
-
 
 # Material and method
 
