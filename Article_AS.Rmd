@@ -64,7 +64,44 @@ Considering the hierarchical structure of the data, with annual rings nested in 
 RD = b0*e ( b1/CA ) + CA/b2 + e 
 
 ```
-where RD is the mean ring density (kgm-3), CA is cambial age (years), b0, b1 and b2 are empirically determined parameters, and e is the residual error term. Parameter b0 denotes the intercept when CA approaches a theoretical value of 0. We noticed that it was impossible to optimize the equation using the same estimated parameters for all tree cores, because the pattern of variation of annual rings average density of each tree is more or less different from the others. We, therefore, used the optim function of the stats package in the R [@R2018] statistical programming environment to find the best parameters iteratively for each tree core . The fit of the model was evaluated by visual analysis of the model residual curves against adjusted values and explanatory variables, fit indices (R2) (Parresol 1999). The graphic description in figure 1 of the three parameters of our model makes it possible to
+where RD is the mean ring density (kgm-3), CA is cambial age (years), b0, b1 and b2 are empirically determined parameters, and e is the residual error term. Parameter b0 denotes the intercept when CA approaches a theoretical value of 0. We noticed that it was impossible to optimize the equation using the same estimated parameters for all tree cores, because the pattern of variation of annual rings average density of each tree is more or less different from the others. We, therefore, used the optim function of the stats package in the R [@R2018] statistical programming environment to find the best parameters iteratively for each tree core . The fit of the model was evaluated by visual analysis of the model residual curves against adjusted values and explanatory variables, fit indices (R2) (Parresol 1999). The graphic description in figure 1 of the three parameters of our model makes it possible to understand how each parameter influences our model (Figure 1). 
+
+![paramtres](/home/andre/Travail/Thèse/Article_AS/graph_table/parameters.png)
+
+Figure 1 : Graphic of description of different parameters b0, b1 and b2 of the model. Increasing the value of the parameters b0 and b1 results in an increase in the density at the level of all the rings. The increase in the parameter b2 causes a sharp rise in density after the decrease in the first rings.
+
+
+It can be observed in figure 1 that the parameters b0 and b1 influence the whole of the curve. An increase of one of these parameters leads to that of the density on all rings. Unlike parameter b0 and b1, parameter b2 seems to be influenced by some of the density. A low value of this parameter causes a sharp increase of the density starting from the third ring and when this parameter increases a decrease of the density is observed at this level until the curve is similar to the cases of the parameters b0 and b1. Beyond the value 1, the parameter b2 does not influence the variation of the density.\ 
+
+## Determination of the wood density uniformity index
+The uniformity index is an index to determine the variation in the density of pith-to-bark in order to identify tree families that are least sensitive to variations in climatic conditions. The residues of our model were used to obtain the wood density uniformity index, which was determined using an equation. We subtracted the density residues values of year n-1 from year n. We were interested more specifically in the difference between the average density residues of annual rings of two consecutive years, no matter whether the difference was positive or negative. The absolute value was used for each difference to get rid of the sign. The index was estimated from the following formula:
+
+```
+H = ∑ abs ( Dn − Dn − 1 )    
+
+```
+Where H is the uniformity index, Dn  is the wood density residues of year N and  Dn − 1 is the tree density residues of year N-1. 
+
+## Spearman’s rank correlation coefficient (Spearman’s rho) 
+To describe the link between two variables by means of a monotonic function, we used Spearman’s rank correlation coefficient. We calculated this coefficient for the index of uniformity and the different parameters of the model. The elements for which we calculated Spearman’s rho are: the uniformity index for each of the tree families between the two study sites, the model residues for each of the families and the three parameters to estimate from the model. The cor.test function in the R (Team Core 2018 R) statistical programming environment was used to calculate Spearman’s rho. We used a 95 percent confidence interval.
+
+## Quantitative genetic analyses
+Variance and covariance for genetics were estimated using mixed models (Lenz et al., 2013) of the R software. The model used is as follows:
+
+```
+yijkl = μ + si + b(i)j + fk + bf (i)jk + eijkl    
+
+```
+
+where yijkl  is the observation on the ijklth tree, μ is the overall mean, si is the fixed site effect, b(i)j is the fixed effect of the j th bloc in site i, fk is the random effect of the k th family, bf(i)j is the random interaction of family and bloc, and e ijkl is the residual error.
+In a full-sib design with random mating, members of the same family are presumed to share half of their genes (White et al., 2007). Therefore, individual heritability was obtained as follows:
+
+```
+h2  = 2*Vf / VT   
+```
+
+Where h2 is individual heritability, Vf is family variance, VT is total variance.
+ASReml3 package (David Butler, 2018) in the R statistical programming environment (R Core Team 2018) was used to estimate trait genetic parameters based on the residual maximum likelihood.
 
 \clearpage
 
