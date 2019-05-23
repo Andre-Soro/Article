@@ -82,7 +82,7 @@ Variance and covariance for genetics were estimated using mixed models (Lenz et 
 
 $$ y_{ijkl} = \mu + s_i + b_{(i)j} + f_k + bf_{(i)jk} + e_{ijkl}$$
 
-where yijkl  is the observation on the ijklth tree, $\mu$ is the overall mean, si is the fixed site effect, $b_{(i)j}$ is the fixed effect of the $j$ th bloc in site $i$, $f_k$ is the random effect of the k th family, $bf_{(i)j}$ is the random interaction of family and bloc, and $e_{ijkl} is the residual error.
+where yijkl  is the observation on the ijklth tree, $\mu$ is the overall mean, si is the fixed site effect, $b_{(i)j}$ is the fixed effect of the $j$ th bloc in site $i$, $f_k$ is the random effect of the k th family, $bf_{(i)j}$ is the random interaction of family and bloc, and $e_{ijkl}$ is the residual error.
 In a full-sib design with random mating, members of the same family are presumed to share half of their genes (White et al., 2007). Therefore, individual heritability was obtained as follows:
  
  $$h_2= 2 \frac{V_f}{V_T}$$
