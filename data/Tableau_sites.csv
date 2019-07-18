@@ -1,3 +1,3 @@
-Site,Latitude,Longitude,Elevation,Average temperature (°C),Annual precipitation (mm),Ecological region
-Asselin (Témiscouata),47.8808,-68.4436,349,3.1,960,Field of fir-yellow birch
-Saint-Casimir (Portneuf),46.6994,-72.1119,53,4.9 ,1051,Maple-lime bush
+Site,Location,Latitude ,Longitude ,Elevation (m),MAT,TAP (mm),Soil type
+Asselin ,Squatec,47.88,-68.44,349,2.4,1042.0,loamy soils
+Saint-Casimir ,Saint-Alban,46.70,-72.11,53,4.7,1135.7,sandy-loam soils
