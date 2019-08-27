@@ -46,44 +46,39 @@ In this study, we evaluated the amplitude of the interannual variation (high fre
 
 ## Sampling
 
-The material used was sampled from an experimental provenance-progeny test plantations designed to assess the genetic merit of first generation selections, which had been subdivided into breeding groups and delineated by provenance or geographic region. The details of the setting up of the experiment are described in @beaulieu1996. Crosses were made according to a partial diallel mating design within each of the six different breeding groups or sublines [@Burdon1983], which were designed to limit future inbreeding to within group. Each parent tree has been used in crossings one to three times, giving half-brother families (trees with one of two parents in common) and full-brother families (trees with both parents in common) in breeding groups. Genetic testing were set up in 1999 on 2-year-old seedlings from these experimental plantations near Asselin balsam fir-yellow birch ecological domain (cool weather), and Saint-Casimir located in the maple–basswood ecological domain (warm weather), Quebec, Canada, in randomized complete blocks to avoid any possible impact of heterogeneity within each site (table 1). Trees were assigned to plots in rows of five trees / plot (spacing of 2 m × 2 m) [@beaulieu2014]. In this study, we were used 93 full-brother families for a total of 2365 white spruce trees. The sampled trees were drawn from 18 plots over the two sites and 9–14 individuals were sampled per full-sib cross. Trees used in this study are exclusively full-brother families.\ 
+The material used was sampled from an experimental provenance-progeny test plantations designed to assess the genetic merit of first generation selections, which had been subdivided into breeding groups and delineated by provenance or geographic region. The details of the setting up of the experiment are described in @beaulieu1996. Crosses were made according to a partial diallel mating design within each of the six different breeding groups or sublines [@Burdon1983], which were designed to limit future inbreeding to within group. Each parent tree was used in crossings one to three times, giving half-brother families (trees with one of two parents in common) and full-brother families (trees with both parents in common) in breeding groups. Genetic testing were set up in 1999 on 2-year-old seedlings from these experimental plantations near Asselin balsam fir-yellow birch ecological domain, and Saint-Casimir located in the maple–basswood ecological domain, Quebec, Canada, in randomized complete blocks to avoid any possible impact of heterogeneity within each site (table 1). Trees were assigned to plots in rows of five trees / plot (spacing of 2 m × 2 m) [@beaulieu2014]. In this study, we were used 93 full-brother families for a total of 2365 white spruce trees. The sampled trees were drawn from 18 plots over the two sites and 9–14 individuals were sampled per full-sib cross. Trees used in this study are exclusively full-brother families.\ 
 
 |Site          |Location    | LAT (°N)| LON (°W)| ELV (m)| MAT (°C)| TAP (mm)|Soil type        |Ecological region      |
-|:-------------|:-----------|--------:|--------:|-------:|--------:|--------:|:----------------|:----------------------|
+|:-------------|-----------:|--------:|--------:|-------:|--------:|--------:|----------------:|:----------------------|
 |Asselin       |Squatec     |47.88    |-68.44   |349     |2.4      |1042.0   |loamy soils      |balsam fir-yellow birch|
 |Saint-Casimir |Saint-Alban |46.70    |-72.11   |53      |4.7      |1135.7   |sandy-loam soils |maple–basswood         |
-Table: Location and climatic conditions* (over 1981–2010) of the two plantation sites.
-
-*LAT, latitude; LON, longitude; ELV, elevation; MAT, mean annual temperature; TAP, total annual precipitation.
+Table: Location and climatic conditions (over 1981–2010) of the two plantation sites. LAT, latitude; LON, longitude; ELV, elevation; MAT, mean annual temperature; TAP, total annual precipitation.
 
 
-Wood cores were extracted to a thickness of 1,68 mm from the south facing side of each tree 15-year-old trees in 2015 with a breast-height diameter (DBH15, 1.3 m above ground). Tree cores are extracted using increment borer which is a specialized tool for extracting wood cores from a living tree with relatively minor damage to the plant itself. These cores were used to determine ring width and wood density. Density was determined by scanning incremental cores from pith-to-bark along the radial face at a resolution of 25 $\mu$m in the QTRS-01X ring analyzer (Quintek Measurement Systems Inc., Knoxville, TN, USA). A weighted mean density line was obtained by summing the product between the annual density measurements and the ratio of the respective radial areas to the total radial area. Wood cores were conditioned to about 7% moisture before scanning. Thus, the determination of the wood density makes it possible to calculate a quality index of it. From the density profiles, the limits of the annual growth rings were determined together with the relative proportions of earlywood and latewood in each annual ring using in-house data processing routines. Ring width determined through information of densitometry profiles. The transition between earlywood and the latewood is determined using the "Unix" script. This script used a transition density threshold ($D_t$) determined for each ring as follows:
+## Sample preparation and scanning
 
-$$D_t= \frac{(D_{min}+D_{max})}{2}$$
-Where $D_t$ is ring density threshold, $D_{min}$ is ring minimum density and $D_{max}$ is ring maximum density. Latewood started when these conditions were met:
+Wood cores were extracted to a thickness of 1,68 mm from the south facing side of each tree 15-year-old trees in 2015 with a breast-height diameter (DBH15, 1.3 m above ground). Wood cores were extracted using increment borer which is a specialized tool for extracting wood cores from a living tree with relatively minor damage to the plant itself. These cores were used to determine ring width and wood density. Density was determined by scanning incremental cores from pith-to-bark along the radial face at a resolution of 25 $\mu$m in the QTRS-01X ring analyzer (Quintek Measurement Systems Inc., Knoxville, TN, USA). A weighted mean density line was obtained by summing the product between the annual density measurements and the ratio of the respective radial areas to the total radial area. Wood cores were conditioned to about 7% moisture before scanning. Determination of the wood density makes it possible to calculate a quality index of it. From the density profiles, the limits of the annual growth rings were determined together with the relative proportions of earlywood and latewood in each annual ring. Ring width determined through information of densitometry profiles. The transition between earlywood and the latewood is determined using a script developed, to check for possible errors (missing rings, abnormally low or high readings) and calculate the transition point between the initial wood and the final wood. The script uses the average between the minimum density and the maximum density to obtain the transition density threshold ($D_t$).
 
-1. $D_x < D_t$
+<!--- $$D_t= \frac{(D_{min}+D_{max})}{2}$$
+Where $D_t$ is ring density threshold, $D_{min}$ is ring minimum density and $D_{max}$ is ring maximum density. Latewood started when this condition is met:
 
-2. $D_{x+1} >= D_t$
+$$D_i < D_t \&\& D_{i+1} >= D_t \&\& D_{i+2} >= D_t$$
 
-3. $D_{x+2} >= D_t$
-
-Where $D_x$ is current reading and $D_t$ is next reading. \ 
+Where $D_i$ is the ith density data. ---->  
 
 
 ![Map of Quebec showing the location of the two study sites where the data were collected](graph_table/Study.sites.png){width=300px; height=400px}
 
 As part of this study, it is essential to accurately identify the year of formation of the annual rings measured. To this end, we used the technique of Crossdating which consists in obtaining the concordance of the number of rings and of their width pattern to avoid counting errors or those caused by missing rings or by false annual rings. Crossdating  is one of the most important basic principles of dendrochronology. This technique ensures that each tree ring is assigned to the exact year of its formation. This is accomplished by matching patterns of wide and narrow rings between cores from the same tree, and between trees from different positions.
-To verify the accuracy of dates and determine if there were missing rings, we used COFECHA, which is a dendrochronology software program used for crossdating and quality control of annual ring measurements [@HOLMES1983]. Thus, as the annual ring separation was carried out by an algorithm, we eliminated the samples (127 samples) whose dating was not correct and could not be corrected. Any incomplete or false rings were excluded from the dataset.
+To verify the accuracy of dates and determine if there were missing rings, we used COFECHA, which is a dendrochronology software program used for crossdating and quality control of annual ring measurements [@HOLMES1983]. Annual ring separation was carried out by an algorithm, we eliminated the samples (127 samples) whose dating was not correct and could not be corrected. Any incomplete or false rings were excluded from the dataset.
 
 ## Model Development
-A model was developed to describe the patterns of variation in mean annual ring density in the stem in white spruce for the purpose of modeling the known density variation portion and subtracting it to better observe the rest of the density variations. Considering the hierarchical structure of the data, with observations on annual rings nested in the cores, cores nested in the trees, and trees nested in blocks, we opted for a mixed-effects modelling approach using nlme package [@NLME2018] in the R statistical programming environment [@R2018]. Previous studies have used this method to describe the density profile of different spruce species that have a similar profile [@franceschini2010; @gardiner2011]. 
-However, when modeling density profiles we found that the variation between individual cores follows different patterns from the pith-to-bark between trees. We noticed that it was impossible to optimize the equation using the same estimated parameters for all tree cores, because the pattern of variation of annual rings average density of each tree is more or less different from the others. To circumvent this problem, we chose to model each of the profiles separately. We, therefore, used the optim function of the stats package in the R [@R2018] statistical programming environment to find the best parameters iteratively for each tree core. Model fit of the model was evaluated by visual analysis of the model residual curves against adjusted values in addition to the explanatory variables, fit indices (R^2^) [@Pape1999].
+A model was developed to describe the patterns of variation in mean annual ring density in the stem in white spruce for the purpose of modeling the known density variation portion and subtracting it to better observe the rest of the density variations. We had hierarchical structure of the data, with observations on annual rings nested in the cores, cores nested in the trees, and trees nested in blocks. Unlike some previous studies [@franceschini2010; @gardiner2011] that used mixed models to describe the radial density profile, we adjusted the curve of our equation to each core for a better description of the profiles. We, therefore, used the optim function of the stats package in the R [@R2018] statistical programming environment to find the best parameters iteratively for each tree core. 
 As in the study of @Xiang2014, pith-to-bark wood density profiles in our data were different among cores. A nonlinear equation was fit for each core to describe ring density profiles, producing different parameter estimates for each core. The radial pattern of wood density in white spruce can be described as follows: 
 
-$$RD = b_0 \times \exp\left(\frac{b_1}{CA}\right) + \frac{CA}{b_2} + e $$
+$$RD(t) = b_0 \times \exp\left(\frac{b_1}{t}\right) + \frac{t}{b_2} + e $$
 
-where RD is the mean ring density (kg.m^-3^), CA is cambial age (years), $b_0$, $b_1$ and $b_2$ are empirically determined parameters, and $e$ is the residual error term. Parameter $b_0$ denotes the intercept when CA approaches a theoretical value of 0; $b_1$ denotes the scale parameter of the early decrease in RD. $b_2$ denotes the rise in RD at the end of the juvenile wood and at the beginning of the mature wood formation. The error term $e$ was assumed to be normally distributed, with N (0, $\sigma^{2}$). The first exponential term $b_0 \times \exp\left(\frac{b_1}{CA}\right)$ has a value which decreases rapidly in the first few annual rings and then gradually approaches an asymptote close to zero. The graph in figure 2 describes the three parameters of our model and allows us to understand how each parameter influences our model (Fig 2).
+where RD is the mean ring density (kg.m^-3^), t is cambial age (years), $b_0$, $b_1$ and $b_2$ are adjusted parameters, and $e$ is the residual error term. Parameter $b_0$ denotes the intercept when t approaches a theoretical value of 0; $b_1$ denotes the scale parameter of the early decrease in RD. $b_2$ denotes the rise in RD at the end of the juvenile wood and at the beginning of the mature wood formation. The error term $e$ was assumed to be normally distributed, with N (0, $\sigma^{2}$). The first exponential term $b_0 \times \exp\left(\frac{b_1}{CA}\right)$ has a value which decreases rapidly in the first few annual rings and then gradually approaches an asymptote close to zero. The graph in figure 2 describes the three parameters of our model and allows us to understand how each parameter influences our model (Fig 2).
 
 ![Graphic of description of different parameters $b_0$, $b_1$ and $b_2$ of the model. Increasing the value of the parameters $b_0$ and $b_1$ results in an increase in the density at the level of all the rings. The increase in the parameter $b_2$ causes a sharp rise in density after the decrease in the first rings.](graph_table/parameters.png)
 
@@ -92,55 +87,58 @@ It can be observed in figure 2 that the parameters $b_0$ and $b_1$ influence the
 This modeling of the density profiles then made it possible to subtract the estimated profile which represents the low frequency signal share described previously in the introduction. Thus, only the part of the high-frequency signal that interests us remains to evaluate the variability of the density related to factors external to the tree.\ 
 
 ## Determination of interannual radial variation amplitude of wood density index
-After subtraction of the typical density, it is observed that the residues remain variable. Knowing that the low frequency signal is subtracted, this radial variation can only be due to the high frequency signal which is the interannual radial variation. As explained earlier in the introduction, low interannual radial variation is an important criterion for wood quality. In order to identify tree families with low interannual radial variation amplitude in density, we have created a interannual radial variation amplitude index.
-The interannual variation amplitude of wood density index is an index to determine the variability in the density of pith-to-bark in order to identify tree families that are least sensitive to variations in climatic conditions. The residues of our model were used to obtain the interannual variation amplitude of wood density index, which was determined using an equation. We subtracted the density residues values of year $n-1$ from year $n$. We were interested more specifically in the difference between the average density residues of annual rings of two consecutive years, no matter whether the difference was positive or negative. The absolute value was used for each difference to get rid of the sign. The index was estimated from the following formula:
+Type II variation profile (low frequency signal) being subtracted from the residues represents the high frequency signal which is the interannual variation. In order to identify tree families with low interannual variation amplitude in density, we have created a index. This index makes it possible to determine the amplitude of the interannual variation of the density in order to identify the families of trees least sensitive to the variations of the environmental conditions. We subtracted the density residues values of year $n-1$ from year $n$. We were interested more specifically in the difference between the average density residues of annual rings of two consecutive years, no matter whether the difference was positive or negative. The absolute value was used for each difference to get rid of the sign. The index was estimated from the following formula:
 
 $$V = \sum | D_n - D_{n - 1} |$$
 
-Where V is the interannual radial variation amplitude of wood density index, $D_n$ is the wood density residues of year $n$ and  $D_{n - 1}$ is the wood density residues of year $n-1$. 
+Where V is the index, $D_n$ is the wood density residues of year $n$ and  $D_{n - 1}$ is the wood density residues of year $n-1$. 
 
 ## Spearman’s rank correlation coefficient (Spearman’s rho) 
-Spearman’s rank correlation coefficient is a correlation coefficient to describe the link between two variables by means of a monotonic function. We therefore used a Spearman’s rank correlation coefficient to make a comparison of the response of the tree families between the two study sites. We calculated this coefficient for the interannual variation amplitude of wood density index and the different parameters of the model. The elements for which we calculated Spearman’s rho are: the interannual variation amplitude of wood density index for each of the tree families between two study sites and the three parameters to estimate from the model. The $cor.test$ function in the R [@R2018] statistical programming environment was used to calculate Spearman’s rho. We used a 95 percent confidence interval.
+We used a Spearman’s rank correlation coefficient to make a comparison of the response of the tree families between the two study sites. The elements for which we calculated Spearman’s rho are: V for each of the tree families between two study sites and the three parameters to estimate from the model. The $cor.test$ function in the R [@R2018] statistical programming environment was used to calculate Spearman’s rho. We used a 95 percent confidence interval.
 
-$$rho = \frac{cov(rg_X,rg_Y)}{\sigma_{rg_X} \times\sigma_{rg_Y}}$$
-Where $rho$ is a nonparametric measure of rank correlation, $cov(rg_X,rg_Y)$ is the covariance of the rank variables. $\sigma_{rg_X}$ and $\sigma_{rg_Y}$ are the standard deviations of the rank variables.
+<!---$$rho = \frac{cov(rg_X,rg_Y)}{\sigma_{rg_X} \times\sigma_{rg_Y}}$$
+Where $rho$ is a nonparametric measure of rank correlation, $cov(rg_X,rg_Y)$ is the covariance of the rank variables. $\sigma_{rg_X}$ and $\sigma_{rg_Y}$ are the standard deviations of the rank variables. ----->
 
 ## Quantitative genetic analyses
-Variance and covariance for genetics were estimated using linear mixed-effects model [@Lenz2013] of the R software. The equation used is as follows:
+Variance components for genetic analysis were estimated using ASReml 3 [@Butler2018] based on linear mixed-effects model using as follows:
 
 $$ Y_{ijkl} = \mu + s_i + b_{(i)j} + f_k + bf_{(i)jk} + e_{ijkl}$$
 
-where $Y_{ijkl}$  is the observation on the $ijklth$ tree, $\mu$ is the overall mean, $s_i$ is the fixed site effect, $b_{(i)j}$ is the fixed effect of the $j^{th}$ bloc in site $i$, $f_k$ is the random effect of the $k^{th}$ family, $bf_{(i)j}$ is the random interaction of family and bloc, and $e_{ijkl}$ is the residual error.
-In a full-sib design with random mating, members of the same family are presumed to share half of their genes [@white2007]. Therefore, individual heritability was obtained as follows:
+where $Y_{ijkl}$  is the observation on the $ijklth$ tree, $\mu$ is the overall mean, $s_i$ is the fixed site effect, $b_{(i)j}$ is the fixed effect of the $j^{th}$ bloc in site $i$, $f_k$ is the random effect of the $k^{th}$ family, $bf_{(i)j}$ is the random interaction of family and bloc, and $e_{ijkl}$ is the residual effect.
+In a full-sib design with random mating, members of the same family are presumed to share half of their genes [@white2007]. Therefore, Individual-tree narrow-sense heritability ($hi^2$), obtained based on each fitted regression function, was calculated using the following equation:
  
- $$h_2= 2 \frac{\sigma^2_f}{\sigma^2_t}$$
+ $$hi^2= 2 \frac{\sigma^2_f}{\sigma^2_t}$$
  
-Where $h_2$ is individual heritability, $\sigma^2_f$ is family variance, $\sigma^2_t$ is total variance.
-ASReml3 package [@Butler2018] in the R statistical programming environment [@R2018] was used to estimate trait genetic parameters based on the residual maximum likelihood.
+Where $hi^2$ is individual heritability, $\sigma^2_f$ is family variance, $\sigma^2_t$ is total variance.
 
 #3 Results
 
-The model we have developed has made it possible to optimize the density of the wood for each core. A summary of the parameter values obtained of the model fitting process (Eq. 1) can be found in Table 2. We observe that the average value of the model parameters differs between Asselin and Saint-Casimir. For the parameters $b_0$ and $b_1$, the average is higher in Saint-Casimir and for parameter $b_2$ it is higher in Asselin. Although there are small differences in the parameters between the two sites, these differences are very small. The fit of the model is therefore similar at both sites.\ 
+The model we have developed has made it possible to adjust wood density for each core. A summary of the parameter values obtained of the model fitting process (Eq. 1) can be found in figure 4&5. We observe that the average value of the model parameters differs between Asselin and Saint-Casimir. For the parameters $b_0$ and $b_1$, the average is higher in Saint-Casimir and for parameter $b_2$ it is higher in Asselin. Although there are small differences in the parameters between the two sites, these differences are very small. The fit of the model is therefore similar at both sites. 
 
-|Site                     |Parameter |Min    |Mean   |Max    |
-|:------------------------|:---------|------:|------:|------:|
-| Asselin (Témiscouata)   |$b_0$     | 257.26| 302.78| 369.78|
-|                         |$b_1$     |  -0.93|   0.97|   5.36|
-|                         |$b_2$     | -81.83|  17.02|  61.34|
-| Saint-Casimir (Portneuf)|$b_0$     | 264.88| 304.40| 353.90|
-|                         |$b_1$     |  -1.34|   1.09|   7.04|
-|                         |$b_2$     | -50.87|  14.87|  61.34|
-Table: Summary table of parameters
- 
-
-![Pith-to-bark radial pattern of breast height density by ring. Fine lines show densities for individual stands of the samples for the Asselin site.The bold lines shows the density predicted by Model](graph_table/Density_asselin.png){width=330px; height=330px}  
+![Summary graphic of parameters in Asselin.](graph_table/parameter.asselin.png){width=335px; height=330px} 
 
 
-![Pith-to-bark radial pattern of breast height density by ring. Fine lines show densities for individual stands of the samples for the Saint-Casimir site.The bold lines shows the density predicted by Model](graph_table/Density_casimir.png){width=330px; height=330px}   
+    
+
+![Summary graphic of parameters in Saint-Casimir.](graph_table/parameters.casimir.png){width=335px; height=330px} 
+
+
+
+
+
+![Pith-to-bark radial pattern of breast height density by ring. Fine lines show densities for individual stands of the samples for the Asselin site. The bold lines shows the density predicted by Model.](graph_table/Density_asselin.png){width=330px; height=330px}  
+
+
+
+
+
+
+
+![Pith-to-bark radial pattern of breast height density by ring. Fine lines show densities for individual stands of the samples for the Saint-Casimir site.The bold lines shows the density predicted by Model.](graph_table/Density_casimir.png){width=330px; height=330px}   
 
 When considering all the cores of trees from the pith-to-bark, ring density was high near the pith and decreased rapidly in the first 5 growth rings. It declined from 430 kg/m^3^ to 370 kg/m^3^ for the Saint-Casimir site and from 455kg/m^3^ to 375 kg/m^3^ for the Asselin site. Then, this decrease was followed by a slow increase until the twelfth year. \ 
 
-Model predictions are similar to data trends across sites (figs 4 and 5). A decrease in density is observed in the first years of growth and then an increase in density from a certain cambial age. Whether it is the data or the predictions of the model, we observe a difference between the Asselin (fig 4) and Saint-Casimir (fig 5) sites. The increase in density after the decrease of the first years of growth is greater in Saint-Casimir than in Asselin. However, the average density is very similar between the two sites. In spite of the interannual variations, the trees have the same general tendency and this one seems well described by the model which adapts to each of the sites.\ 
+Model predictions are similar to data trends across sites (figs 6 and 7). A decrease in density is observed in the first years of growth and then an increase in density from a certain cambial age. Whether it is the data or the predictions of the model, we observe a difference between the Asselin (fig 6) and Saint-Casimir (fig 7) sites. The increase in density after the decrease of the first years of growth is greater in Saint-Casimir than in Asselin. However, the average density is very similar between the two sites. In spite of the interannual variations, the trees have the same general tendency and this one seems well described by the model which adapts to each of the sites.\ 
 
 <!--
 ```{r aa, echo=FALSE}
@@ -149,42 +147,30 @@ knitr::kable(data)
 ```
 -->
 
+![Summary graphic of index V per site.](graph_table/indexV.png){width=335px; height=330px}
 
 
-|Site                     |Min  |Mean  |Max    |
-|:------------------------|----:|-----:|------:|
-|Asselin (Témiscouata)    |116.5| 417.9| 1155.8|
-|Saint-Casimir (Portneuf) | 54.9| 339.8|  746.0|
-|Combined                 | 54.9| 375.9| 1155.8|
-Table: Summary table of variability index
-
-When comparing the index of variability between study sites, there is greater variability in Asselin than in Saint-Casimir. A summary of the density interannual amplitude index values can be found in table 3. The maximum value is 1155.8 in Asselin, and 746 for the Saint-Casimir site, which represents a huge difference. \ 
+When comparing the index V between study sites, there is greater variability in Asselin than in Saint-Casimir. A summary of index V values can be found in figure 8. The maximum value is 1155.8 in Asselin, and 746 for the Saint-Casimir site, which represents a huge difference. \ 
 
 |Rank correlation  |Rho  |P-value |
-|:-----------------|----:|-------:|
+|:-----------------|----:|:-------|
 |Density residus   | 0.57|8.7^-09^|
-|Variability index | 0.08|    0.43|
+|Variability index | 0.08|0.43    |
 |$b_0$             | 0.70|2.2^-16^|
 |$b_1$             | 0.80|2.2^-16^|
 |$b_2$             | 0.60|2.2^-16^|
 Table: Sperman’s Rang correlation
 
-The results of the rank correlation coefficient are summarized in Table 4. These results show an absence of correlation for the variability index (p-value = 0.43) and a strong correlation for all the parameters of the model (p-value = 2.2 10^-16^). The value of Rho is very similar between the three parameters. \ 
+The results of the rank correlation coefficient are summarized in Table 2. These results show an absence of correlation for the index V (p-value = 0.43) and a strong correlation for all the parameters of the model (p-value = 2.2 10^-16^). The value of Rho is very similar between the three parameters. \ 
+
+![Abstract of the heritability ($hi^2$) of the density, the ring width, parameters $b_0$, $b_1$, $b_2$, index V and standard error per site.](graph_table/heritability.png){width=335px; height=330px}
 
 
-|Trait             |Combined sites |Asselin |Saint-Casimir |
-|:-----------------|:--------------|:-------|:-------------|
-|Wood density      |0.55           |0.58    |0.70          |
-|Width             |0.23           |0.32    |0.43          |
-|$b_0$             |0.20           |0.20    |0.3           |
-|$b_1$             |0.06           |0.10    |0.06          |
-|$b_2$             |0.04           |0.10    |0.03          |
-|Variability index |1.10^-6^       |6.10^-6^|3.10^-6^      |
-Table: Abstract of the heritability of the density, the ring width, parameters $b_0$, $b_1$, $b_2$ and the Variability index. 
 
-Heritability is higher in each site separately than that of the combined sites for all traits. Wood density is the only character with strong heritability for each of the sites as well as for the combined sites. The annual ring width and the parameter $b_0$ have low heritability. When parameters $b_1$ and $b_2$, their heritability is very low. The uniformity index has almost zero heritability regardless of the study site.\ 
+Heritability is higher in each site separately than that of the combined sites for all traits (fig 9). Wood density is the only character with strong heritability for each of the sites as well as for the combined sites. The annual ring width and the parameter $b_0$ have low heritability. When parameters $b_1$ and $b_2$, their heritability is very low. The uniformity index has almost zero heritability regardless of the study site.\ 
 
 \clearpage
+
 
 # 4 Discussion
 
