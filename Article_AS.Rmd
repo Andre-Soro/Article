@@ -114,66 +114,54 @@ In a full-sib design with random mating, members of the same family are presumed
  
 Where $hi^2$ is individual heritability, $\sigma^2_f$ is family variance, $\sigma^2_t$ is total variance.
 
-#3 Results
+# 3 Results
 
-The model we have developed has made it possible to adjust wood density for each core. A summary of the parameter values obtained of the model fitting process (Eq. 1) can be found in figure 4&5. We observe that the average value of the model parameters differs between Asselin and Saint-Casimir. For the parameters $b_0$ and $b_1$, the average is higher in Saint-Casimir and for parameter $b_2$ it is higher in Asselin. Although there are small differences in the parameters between the two sites, these differences are very small. The fit of the model is therefore similar at both sites. 
-
-![Summary graphic of parameters in Asselin.](graph_table/parameter.asselin.png){width=335px; height=330px} 
-
-
-    
-
-![Summary graphic of parameters in Saint-Casimir.](graph_table/parameters.casimir.png){width=335px; height=330px} 
-
-
-
-
-
-![Pith-to-bark radial pattern of breast height density by ring. Fine lines show densities for individual stands of the samples for the Asselin site. The bold lines shows the density predicted by Model.](graph_table/Density_asselin.png){width=330px; height=330px}  
-
-
-
-
-
-
-
-![Pith-to-bark radial pattern of breast height density by ring. Fine lines show densities for individual stands of the samples for the Saint-Casimir site.The bold lines shows the density predicted by Model.](graph_table/Density_casimir.png){width=330px; height=330px}   
+## Mean density per ring and prediction curve of the model
 
 When considering all the cores of trees from the pith-to-bark, ring density was high near the pith and decreased rapidly in the first 5 growth rings. It declined from 430 kg/m^3^ to 370 kg/m^3^ for the Saint-Casimir site and from 455kg/m^3^ to 375 kg/m^3^ for the Asselin site. Then, this decrease was followed by a slow increase until the twelfth year. \ 
 
+![Pith-to-bark radial patern of the density measured from the cores taken at breast height by ring. A) Density for the site of Asselin and B) Density for the site of Saint-Casimir. The lines indicate densities for individual stands of samples. The bold lines indicate the density predicted by the adjusted model for all trees.](graph_table/Density.pdf)
+
+
+
+|Sites             |    N|$R^2$ Adjusted|       E|E   |E%  |
+|:-----------------|----:|-------------:|-------:|---:|---:|
+|Asselin           | 1035|0.49          |0.000008|58.6|0.15|
+|Saint-Casimir     | 1162|0.49          |0.00007 |48.1|0.13|
+
+
+The fit of the model we developed allowed us to take into account the density profile of each individual tree. A summary of the parameter values obtained of the model fitting process (Eq. 1) can be found in figure 4&5. We observe that the average value of the model parameters differs between Asselin and Saint-Casimir. For the parameters $b_0$ and $b_1$, the average is higher in Saint-Casimir and for parameter $b_2$ it is higher in Asselin. Although there are small differences in the parameters between the two sites, these differences are very small. The fit of the model is therefore similar at both sites. 
+
+
+
+![Comparison of each parameter ($b_0$, $b_1$ and $b_2$) of equation 1 between the two study sites. A) Parameter $b_0$ denotes the intercept when t approaches a theoretical value of 0. B) Parameter $b_1$ denotes the scale parameter of the early decrease in ring density. C) Parameter $b_2$ denotes the rise in ring density at the end of the juvenile wood and at the beginning of the mature wood formation. The error bars represent standard deviation.](graph_table/summary_parameter)
+
 Model predictions are similar to data trends across sites (figs 6 and 7). A decrease in density is observed in the first years of growth and then an increase in density from a certain cambial age. Whether it is the data or the predictions of the model, we observe a difference between the Asselin (fig 6) and Saint-Casimir (fig 7) sites. The increase in density after the decrease of the first years of growth is greater in Saint-Casimir than in Asselin. However, the average density is very similar between the two sites. In spite of the interannual variations, the trees have the same general tendency and this one seems well described by the model which adapts to each of the sites.\ 
 
-<!--
-```{r aa, echo=FALSE}
-data <- readr::read_csv("data/Tableau_resume_indice d'uniformite.csv")
-knitr::kable(data)
-```
--->
 
-![Summary graphic of index V per site.](graph_table/indexV.png){width=335px; height=330px}
+![The index of the amplitude of variation of the interannual density (index V), determined from equation 2. A) Average amplitude of the variation of the interannual density at the Asselin site. B) Average amplitude of variation in interannual density at Saint-Casimir site. The bars represent the standard deviation.](graph_table/IndexV)
 
 
 When comparing the index V between study sites, there is greater variability in Asselin than in Saint-Casimir. A summary of index V values can be found in figure 8. The mean value is 417.5 in Asselin, and 339.8 for the Saint-Casimir site, which represents a huge difference. \ 
 
-|Rank correlation  |Rho  |P-value |
+|Variables         |    R|P-value |
 |:-----------------|----:|-------:|
 |Density residus   | 0.57|8.7^-09^|
 |Index V           | 0.08|0.43    |
 |$b_0$             | 0.70|2.2^-16^|
 |$b_1$             | 0.80|2.2^-16^|
 |$b_2$             | 0.60|2.2^-16^|
-Table: Sperman’s Rang correlation
+Table: Spearman rank correlation coefficients and their P-values between the two study sites (Asselin and Saint-Casimir) of the density, the index of the amplitude of interannual variation of the density and parameters of the equation 1.
 
 The results of the rank correlation coefficient are summarized in Table 2. These results show an absence of correlation for the index V (p-value = 0.43) and a strong correlation for all the parameters of the model (p-value = 2.2 10^-16^). The value of Rho is very similar between the three parameters. \ 
 
-![Abstract of the heritability ($hi^2$) of the density, the ring width, parameters $b_0$, $b_1$, $b_2$, index V and standard error per site.](graph_table/heritability.png){width=335px; height=330px}
+![Individual inheritance of: Ring density, ring width, index of the interannual variation of density (Index_V), parameters ($b_0$, $b_1$ and $b_2$) of equation 1, earlywood density per ring (ew_density), earlywood percentage per ring (ew_percentage), earlywood width (ew_width), latewood density (lw_density), ring index interannual variation in latewood density (lw_index_V), latewood percent per ring (lw_percentage) and latewood width per ring (lw_width) for each of our two study sites. A) The traits of the entire ring per site, B) earlywood wood traits by ring and site, C) latewood traits by ring and site. The bars represent the standard error.](graph_table/heritability.pdf)
 
 
 
 Heritability is higher in each site separately than that of the combined sites for all traits (fig 9). Wood density is the only character with strong heritability for each of the sites as well as for the combined sites. The annual ring width and the parameter $b_0$ have low heritability. When parameters $b_1$ and $b_2$, their heritability is very low. The index V has almost zero heritability regardless of the study site.\ 
 
 \clearpage
-
 
 # 4 Discussion
 

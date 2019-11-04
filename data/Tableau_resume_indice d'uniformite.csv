@@ -1,4 +1,3 @@
-Site,Min,Mean,Max
-Asselin (Témiscouata),0.0,417.5,1155.8
-Saint-Casimir (Portneuf),54.9,339.8,746.0
-Combined,0.0,375.9,1155.8
+Sites,Mean,sd
+Asselin ,417.9,144.2
+Saint-Casimir,340.2,104.1

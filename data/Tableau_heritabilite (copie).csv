@@ -25,16 +25,3 @@ ew_avg_density,St-Casimir,0.3,0.07
 lw_width,St-Casimir,0.3,0.03
 lw_percentage,St-Casimir,0.03,0.07
 lw_avg_density,St-Casimir,0.3,0.07
-Ring_density,Combined,0.55,0.1
-Ring_width,Combined,0.23,0.08
-b0,Combined,0.20,0.06
-b1,Combined,0.06,0.03
-b2,Combined,0.04,0.03
-Index_V,Combined,0.000006,0.00000001
-index_V_lw,Combined,0.05,0.03
-ew_width,Combined,0.005,0.23
-ew_percentage,Combined,0.0000001,0.0000000007
-ew_avg_density,Combined,0.27,0.06
-lw_width,Combined,0.0000000009,0.0000000002
-lw_percentage,Combined,0.0001,0.05
-lw_avg_density,Combined,0.28,0.06
