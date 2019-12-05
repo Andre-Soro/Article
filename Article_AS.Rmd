@@ -6,9 +6,9 @@ editor_options:
   chunk_output_type: inline
 output:
   pdf_document: default
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
 bibliography: biblio.bibtex
 ---
 
@@ -76,7 +76,8 @@ As part of this study, it is essential to accurately identify the year of format
 To verify the accuracy of dates and determine if there were missing rings, we used COFECHA, which is a dendrochronology software program used for crossdating and quality control of annual ring measurements [@HOLMES1983]. Annual ring separation was carried out by an algorithm, we eliminated the samples (127 samples) whose dating was not correct and could not be corrected. Any incomplete or false rings were excluded from the dataset.
 
 ## Model Development
-A model was developed to describe the patterns of variation in mean annual ring density in the stem in white spruce for the purpose of modeling the known density variation portion and subtracting it to better observe the rest of the density variations. Our data has a hierarchical structure, with observations on annual rings nested in the cores, cores nested in the trees, and trees nested in blocks. Unlike some previous studies [@franceschini2010; @gardiner2011] that used mixed models to describe the radial density profile, we adjusted the curve of our equation to each core for a better description of the profiles. We, therefore, used the optim function of the stats package in the R [@R2018] statistical programming environment to find the best parameters iteratively for each tree core. 
+A model was developed to describe the patterns of variation in mean annual ring density in the stem in white spruce for the purpose of modeling the known density variation portion and subtracting it to better observe the rest of the density variations. Latewood density in white spruce is more sensitive to annual variations in climate than the width of the ring [@darrigo1992]. So we applied our model to density and percentage of latewood in order to better evaluate the amplitude of interannual variations in density.\
+Our data has a hierarchical structure, with observations on annual rings nested in the cores, cores nested in the trees, and trees nested in blocks. Unlike some previous studies [@franceschini2010; @gardiner2011] that used mixed models to describe the radial density profile, we adjusted the curve of our equation to each core for a better description of the profiles. We, therefore, used the optim function of the stats package in the R [@R2018] statistical programming environment to find the best parameters iteratively for each tree core. 
 As in the study of @Xiang2014, pith-to-bark wood density profiles in our data were different among cores. A nonlinear equation was fit for each core to describe ring density profiles, producing different parameter estimates for each core. The radial pattern of wood density in white spruce can be described as follows: 
 
 $$RD(t) = b_0 \times \exp\left(\frac{b_1}{t}\right) + \frac{t}{b_2} + e $$
@@ -95,6 +96,7 @@ Type II variation profile (low frequency signal) being subtracted from the resid
 $$V = \sum | D_n - D_{n - 1} |$$
 
 Where V is the index, $D_n$ is the wood density residues of year $n$ and  $D_{n - 1}$ is the wood density residues of year $n-1$. 
+V was determined for wood density over ring the width, density and percentage of latewood. Evaluation of this index for both ring width and latewood will compare the effects of the annual climate that influence the latewood and those associated with the spring conditions that influence ring density [@darrigo1992].
 
 ## Spearman’s rank correlation coefficient (Spearman’s rho) 
 We used a Spearman’s rank correlation coefficient to make a comparison of the response of the tree families between the two study sites. This comparison will allow determine the interaction between the environment and the family effect. The elements for which we calculated Spearman’s rho are: V for each of the tree families between two study sites and the three parameters to estimate from the model. The $cor.test$ function in the R [@R2018] statistical programming environment was used to calculate Spearman’s rho. We used a 95 percent confidence interval.
@@ -108,58 +110,66 @@ Analyses of variance and covariance for various wood density and tree growth tra
 $$ Y_{ijkl} = \mu + s_i + b_{(i)j} + f_k + bf_{(i)jk} + e_{ijkl}$$
 
 where $Y_{ijkl}$  is the observation on the $ijklth$ tree, $\mu$ is the overall mean, $s_i$ is the fixed site effect, $b_{(i)j}$ is the fixed effect of the $j^{th}$ bloc in site $i$, $f_k$ is the random effect of the $k^{th}$ family, $bf_{(i)j}$ is the random interaction of family and bloc, and $e_{ijkl}$ is the residual effect.
+The genetic control of these wood density components, weighted in each ring by their respective sectional area, was evaluated by estimating individual-tree heritability (h^2^).  
 In a full-sib design with random mating, members of the same family are presumed to share half of their genes [@white2007]. Therefore, Individual-tree narrow-sense heritability ($hi^2$), obtained based on each fitted regression function, was calculated using the following equation:
  
  $$hi^2= 2 \frac{\sigma^2_f}{\sigma^2_t}$$
  
-Where $hi^2$ is individual heritability, $\sigma^2_f$ is family variance, $\sigma^2_t$ is total variance.
+Where $hi^2$ is individual heritability, $\sigma^2_f$ is family variance, $\sigma^2_t$ is total variance. \ 
+
 
 # 3 Results
 
-## Mean density per ring and prediction curve of the model
+## Mean density per ring and model prediction
+Wood density variation from the pith-to-bark is similar in the two study sites between the first and the fifth year (Fig. 4). The pattern observed at the two sites corresponds to type II pith-to-bark profile described in introduction. When considering all the cores of trees from the pith-to-bark, ring density decreased rapidly from 430 kg/m^3^ to 370 kg/m^3^ for Saint-Casimir and from 455 kg/m^3^ to 375 kg/m^3^ for Asselin site in the first 5 growth rings. From the sixth year, we observe a stabilization of the density at 375 kg/m^3^ of the site of Asselin (Fig. 4A) unlike the site of Saint-Casimir (Fig. 4B) where we observe a increase  to reach a plateau at the eigth year (380 kg/m^3^). \ 
 
-When considering all the cores of trees from the pith-to-bark, ring density was high near the pith and decreased rapidly in the first 5 growth rings. It declined from 430 kg/m^3^ to 370 kg/m^3^ for the Saint-Casimir site and from 455kg/m^3^ to 375 kg/m^3^ for the Asselin site. Then, this decrease was followed by a slow increase until the twelfth year. \ 
+Like ring density, the latewood density has a type II pith-to-bark profile for two sites (Fig. 4C: Asselin, Fig. 4D: Saint-Casimir). Latewood density decreased rapidly from 500 kg/m^3^ to 480 kg/m^3^ for Saint-Casimir and from 510 kg/m^3^ to 450 kg/m^3^ for Asselin site in the first 5 growth rings. From the sixth year, we observe a stabilization of the density at 450 kg/m^3^ of the site of Asselin (Fig. 4C) unlike the site of Saint-Casimir (Fig. 4D) where we observe a increase  to reach a plateau at the eigth year (4900 kg/m^3^). \ 
 
-![Pith-to-bark radial patern of the density measured from the cores taken at breast height by ring. A) Density for the site of Asselin and B) Density for the site of Saint-Casimir. The lines indicate densities for individual stands of samples. The bold lines indicate the density predicted by the adjusted model for all trees.](graph_table/Density.pdf)
-
-
-
-|Sites             |    N|$R^2$ Adjusted|       E|E   |E%  |
-|:-----------------|----:|-------------:|-------:|---:|---:|
-|Asselin           | 1035|0.49          |0.000008|58.6|0.15|
-|Saint-Casimir     | 1162|0.49          |0.00007 |48.1|0.13|
+As for the percentage of latewood, the trend has a type II pith-to-bark profile for two sites  (Fig. 4E: Asselin, Fig. 4F: Saint-Casimir). In Asselin, the percentage of latewood decreases between 28% in the first year and 15% in the fourth year, then increases to 17% before decreasing again to 12.5%. In Saint-Casimir, latewood decreases between 25% in the first year and 12.5% in the fourth year, then increases to 15% before decreasing again to 13%.\ 
 
 
-The fit of the model we developed allowed us to take into account the density profile of each individual tree. A summary of the parameter values obtained of the model fitting process (Eq. 1) can be found in figure 4&5. We observe that the average value of the model parameters differs between Asselin and Saint-Casimir. For the parameters $b_0$ and $b_1$, the average is higher in Saint-Casimir and for parameter $b_2$ it is higher in Asselin. Although there are small differences in the parameters between the two sites, these differences are very small. The fit of the model is therefore similar at both sites. 
+![Pith-to-bark radial patern of the density measured from the cores taken at breast height by ring (A and B). A) Density for the site of Asselin and B) Density for the site of Saint-Casimir. C and D represent Pith-to-bark radial patern of latewood density (C : Asselin and D: Saint-Casimir). E and F represent pith-to-bark radial patern of latewood percentage (E: Asselin and F: Saint-Casimir). The bold lines indicate the density predicted by the adjusted model for all trees.](graph_table/density2.pdf){height=80%}
+
+|Sites             |N    |$R^2$ Adjusted|       E|  E    |  E%|
+|:-----------------|----:|-------------:|-------:|------:|---:|
+|Asselin           | 1035|0.49          |0.000008|58.6   |0.15|
+|Saint-Casimir     | 1162|0.49          |0.00007 |48.1   |0.13|
+
+Table: Fit indices and error statistics for the fitted model. Mean error (E), mean absolute error (|E|), and mean absolute percentage error (E%) were calculated from the fixed part of each model.
 
 
+The fit of the model we developed allowed us to take into account the density profile of each individual tree. A summary of the parameter values obtained of the model fitting process (Eq. 1) can be found in table 3. The parameters of the model are similar between the two sites, the standard deviations of the mean of these intersect (Table 3). Non-significance of the difference that exists between the parameters is observed at the level of those of the ring density , those of the latewood density and those of the percentage of latewood. The percent change in density explained by cambial age is 49% in the model for each of our two sites (Equation 1) (Table 2). The mean error, the mean absolute error, and the mean percent error were 8^-6^ $kg.m^-3$, 58.6 $kg.m^-3$ and 15%, respectively, for the Asselin site and 7^-5^ $kg.m^-3$, 48.1 $kg.m^-3$ and 13% for the Saint-Casimir site (Table 2). There were no obvious trends in plots of the normalized residuals versus fitted and explanatory variables for Equation 1 (results not shown). The fit of the model is therefore similar at both sites (49%).  \  
 
-![Comparison of each parameter ($b_0$, $b_1$ and $b_2$) of equation 1 between the two study sites. A) Parameter $b_0$ denotes the intercept when t approaches a theoretical value of 0. B) Parameter $b_1$ denotes the scale parameter of the early decrease in ring density. C) Parameter $b_2$ denotes the rise in ring density at the end of the juvenile wood and at the beginning of the mature wood formation. The error bars represent standard deviation.](graph_table/summary_parameter)
-
-Model predictions are similar to data trends across sites (figs 6 and 7). A decrease in density is observed in the first years of growth and then an increase in density from a certain cambial age. Whether it is the data or the predictions of the model, we observe a difference between the Asselin (fig 6) and Saint-Casimir (fig 7) sites. The increase in density after the decrease of the first years of growth is greater in Saint-Casimir than in Asselin. However, the average density is very similar between the two sites. In spite of the interannual variations, the trees have the same general tendency and this one seems well described by the model which adapts to each of the sites.\ 
-
-
-![The index of the amplitude of variation of the interannual density (index V), determined from equation 2. A) Average amplitude of the variation of the interannual density at the Asselin site. B) Average amplitude of variation in interannual density at Saint-Casimir site. The bars represent the standard deviation.](graph_table/IndexV)
-
-
-When comparing the index V between study sites, there is greater variability in Asselin than in Saint-Casimir. A summary of index V values can be found in figure 8. The mean value is 417.5 in Asselin, and 339.8 for the Saint-Casimir site, which represents a huge difference. \ 
-
-|Variables         |    R|P-value |
-|:-----------------|----:|-------:|
-|Density residus   | 0.57|8.7^-09^|
-|Index V           | 0.08|0.43    |
-|$b_0$             | 0.70|2.2^-16^|
-|$b_1$             | 0.80|2.2^-16^|
-|$b_2$             | 0.60|2.2^-16^|
-Table: Spearman rank correlation coefficients and their P-values between the two study sites (Asselin and Saint-Casimir) of the density, the index of the amplitude of interannual variation of the density and parameters of the equation 1.
-
-The results of the rank correlation coefficient are summarized in Table 2. These results show an absence of correlation for the index V (p-value = 0.43) and a strong correlation for all the parameters of the model (p-value = 2.2 10^-16^). The value of Rho is very similar between the three parameters. \ 
-
-![Individual inheritance of: Ring density, ring width, index of the interannual variation of density (Index_V), parameters ($b_0$, $b_1$ and $b_2$) of equation 1, earlywood density per ring (ew_density), earlywood percentage per ring (ew_percentage), earlywood width (ew_width), latewood density (lw_density), ring index interannual variation in latewood density (lw_index_V), latewood percent per ring (lw_percentage) and latewood width per ring (lw_width) for each of our two study sites. A) The traits of the entire ring per site, B) earlywood wood traits by ring and site, C) latewood traits by ring and site. The bars represent the standard error.](graph_table/heritability.pdf)
+|Parameters          |Asselin|Saint-Casimir|
+|:------------------:|------:|------:|
+| $b_0$              |302.78 $\pm$ 55.90|304.40 $\pm$ 41.90|
+| $b_1$              |0.97 $\pm$  0.16 |1.09 $\pm$ 0.15 |
+| $b_2$              |17.02 $\pm$ 2.20 |14.87 $\pm$  2.00 |
+| $b_0$_lw_density   |568.02 $\pm$ 70.30|443.30 $\pm$ 53.00|
+| $b_1$_lw_density   |-0.04 $\pm$ 0.19 |0.10 $\pm$ 0.10 |
+| $b_2$_lw_density   |-299.10 $\pm$ 30.31|-268.40 $\pm$ 200.0|
+| $b_0$_lw_percentage|68.82 $\pm$ 30.3 |85.80 $\pm$ 30.80|
+| $b_1$_lw_percentage|-104.60 $\pm$ 33.04|-133.40 $\pm$ 21.80|
+| $b_2$_lw_percentage|79.69 $\pm$ 20.77|18.30 $\pm$ 2.46 |
+Table: Comparison of each parameter average ($b_0$, $b_1$ and $b_2$) of equation 1 between the two study sites. Parameter $b_0$ denotes the intercept when t approaches a theoretical value of 0. Parameter $b_1$ denotes the scale parameter of the early decrease in ring density. Parameter $b_2$ denotes the rise in ring density at the end of the juvenile wood and at the beginning of the mature wood formation. $b_0$_lw_density is $b_0$ of latewood density, $b_1$_lw_density is $b_1$ of latewood density, $b_2$_lw_density is $b_2$ of latewood density, $b_0$_lw_percentage is $b_0$ of latewood percentage, $b_1$_lw_percentage is $b_1$ of latewood percentage and $b_2$_lw_percentage is $b_0$ of latewood percentage.
 
 
+## Interannual variation in density and index V
+Interannual variation of the density can be observed in Figure 5. It has an amplitude that varies from one tree to another. This amplitude was measured from our index V. The average value of the index V (Asselin: 417.5 $kg.m^-3$, Saint-Casimir: 339.8 $kg.m^-3$) is represented in figure 5A. This result shows that the index V is not significantly (standard deviation) different between the two study sites. Trees therefore behave similarly between sites with regard to the V index. Thus this index allows a classification of the trees in order from the amplitude of interannual variation of density of the wood. The trees with the lowest V index are those with low interannual variation. The average value of the index V (Asselin: 293.7 $kg.m^-3$, Saint-Casimir: 292.1 $kg.m^-3$) determined from latewood is shown in Figure 5B. The average value of the index V (Asselin: 53.5 $kg.m^-3$, Saint-Casimir: 41.9 $kg.m^-3$) determined from latewood percentage is shown in Figure 5C. \ 
 
-Heritability is higher in each site separately than that of the combined sites for all traits (fig 9). Wood density is the only character with strong heritability for each of the sites as well as for the combined sites. The annual ring width and the parameter $b_0$ have low heritability. When parameters $b_1$ and $b_2$, their heritability is very low. The index V has almost zero heritability regardless of the study site.\ 
+![Index avarage of the amplitude of interannual variation of density (V), latewood density ($V_lw$) and latewood density percentage ($V_lw.percentage$) determined from equation 2. A) Average amplitude of the variation of the interannual density ring whole. B) Average amplitude of the variation of the interannual latewood density. C) Average amplitude of the variation of the interannual latewood density percentage. Standard errors of genetic correlations are given by error bars.](graph_table/index_V.pdf){width=85%, height=90%}  
+
+\clearpage
+
+## Family-tree interaction and individual heritability.
+The results of the rank correlation coefficient are summarized in figure 6. These results show an absence of correlation for the index V (p > 0.05), a significant correlation for ring density (p < 10^-5^), a significant correlation for latewood density (p < 10^-5^), a significant correlation for latewood percentage (p < 10^-5^), a significant correlation for latewood index V (p < 10^-5^), a significant correlation for latewood percentage index V (p < 10^-5^), a significant correlation for all the parameters of the model (p < 10^-5^). The value of R is very similar between the parameters. There is a significant correlation for traits related variation in density from pith-to-bark and for latewood index V. On the other hand, there is no correlation when considering the interannual variation of the density.  
+
+
+![Spearman rank correlation coefficients and their significativity between the two study sites (Asselin and Saint-Casimir) of the density, index of the amplitude of interannual variation of the density (V), index of the amplitude of interannual variation of latewood density (Vlwd), $b_0$ of latewood density ($b_0$.lw.d), $b_1$ of latewood density ($b_1$.lw.d), $b_2$ of latewood density ($b_2$.lw.d), $b_0$ of latewood percentage ($b_0$.lw.p), $b_1$ of latewood percentage ($b_1$.lw.p), $b_2$ of latewood percentage ($b_2$.lw.p) and parameters of the equation 1. Significance levels are indicated by ***: P<0.0001; NS:no significant.](graph_table/Spearman_rank_correlation.pdf) 
+
+Individual inheritance of: Ring density, ring width , index of the interannual variation of density (V), parameters ($b_0$, $b_1$ and $b_2$) of equation 1, latewood density (lw.d), index interannual variation in latewood density (V.lw), $b_0$ of latewood density ($b_0$.lw), $b_1$ of latewood density ($b_1$.lw), $b_2$ of latewood density ($b_2$.lw), ring index interannual variation in latewood percentage (V.lp), latewood percent per ring (lp), $b_0$ of latewood percentage ($b_0$.lp), $b_1$ of latewood percentage ($b_1$.lp) and $b_2$ of latewood percentage ($b_2$.lp) for each of our two study sites is shown in Figure 7. This graph presents estimates of individual heritability for the individual tree level. Analysis of heritability showed no significant differences among sites for all traits. At first, when we consider the ring in its entirety, heritability varies between 6.10^-6^ and 0.58 (Asselin) and between 3.10^-6^ and 0.71 (Saint-Casimir) depending on the traits studied. Individual heritability is not significantly different from one to the other. On the other hand, it is significantly different between the traits that are related to the variation of the density of pith-to-bark and that of the amplitude of interannual variation. except index V of latewood percentage, all the parameters have a lower heritability for latewood percentage than for the density of latewood or the entire ring. \  
+
+![Individual inheritance of: Ring density, index of the interannual variation of density (V), parameters ($b_0$, $b_1$ and $b_2$) of equation 1, latewood density (lw.d), index interannual variation in latewood density (V.lw), $b_0$ of latewood density ($b_0$.lw), $b_1$ of latewood density ($b_1$.lw), $b_2$ of latewood density ($b_2$.lw), ring index interannual variation in latewood percentage (V.lp),latewood percent per ring (lp), $b_0$ of latewood percentage ($b_0$.lp), $b_1$ of latewood percentage ($b_1$.lp) and $b_2$ of latewood percentage ($b_2$.lp) for each of our two study sites. Standard errors of genetic correlations are given by error bars.](graph_table/heritability2.pdf) 
 
 \clearpage
 
